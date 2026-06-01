@@ -56,4 +56,10 @@ public abstract class ProductEntity implements Serializable, SaleableItem {
                 ", productId='" + productId + '\'' +
                 '}';
     }
+
+    // This allows Thymeleaf to access "${product.productType}"
+    // It returns the name of the Java class (e.g., "BookEntity")
+    public String getProductType() {
+        return this.getClass().getSimpleName();
+    }
 }

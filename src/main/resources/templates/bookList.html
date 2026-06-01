@@ -3,6 +3,7 @@
 <head><title>Bookstore Inventory</title></head>
 <body>
 <h1>Book List</h1>
+<p><a th:href="@{/cart}">[ 🛒 View My Cart ]</a></p>
 <table border="1">
     <thead>
     <tr>
@@ -23,6 +24,11 @@
 
             <a th:href="@{/books/delete/{id}(id=${book.id})}"
                onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{/books/edit/{id}(id=${book.id})}">Edit</a> |
+            <a th:href="@{/books/delete/{id}(id=${book.id})}" onclick="return confirm('Delete?')">Delete</a> |
+            <strong><a th:href="@{/cart/add/{id}(id=${book.id})}">Add to Cart</a></strong>
         </td>
 
     </tr>
